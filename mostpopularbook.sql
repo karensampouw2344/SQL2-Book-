@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 -- Database: `book`
 --
 
+CREATE TABLE MostPopularBook 
+SELECT
+b.book_id,
+b.title,
+a.author_id
+a.name,
+b.times_borrowed
+FROM book b
+JOIN author a ON b.author_id = a.author_id
+WHERE b.times_borrowed > 10
+AND a.name = 'Cut Medyah';
+
+
 -- --------------------------------------------------------
 
 --
